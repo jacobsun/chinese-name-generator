@@ -1,0 +1,270 @@
+// css reset
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+:link,
+:visited,
+ins {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: """";
+}
+
+address {
+  font-style: normal;
+}
+
+// end of css reset
+@main-color: #F2E268;
+@main-color-darker: #ECD323;
+@main-color-darkest: #EC7223;
+
+.title {
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+
+.container {
+  padding: 0.5rem;
+  color: #333;
+}
+
+header {
+  form {
+    display: flex;
+    flex-flow: row wrap;
+
+    div,
+    input,
+    button {
+      margin: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    #filters-info {
+      flex: 0 10rem;
+      color: #666;
+      padding: 0.5rem 0;
+
+      span {
+        color: @main-color-darkest;
+      }
+    }
+
+    input {
+      flex: 1;
+      min-width: 4rem;
+      border-radius: 0;
+      outline: none;
+      border: 1px solid @main-color-darker;
+
+      &:focus {
+        border: 1px solid @main-color-darkest;
+      }
+    }
+
+    button {
+      flex: 0 5rem;
+      border: 0.15rem solid @main-color;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: #000;
+      background-color: @main-color;
+      text-align: center;
+      position: relative;
+      outline: none;
+
+      &:hover {
+        border-color: @main-color-darker;
+      }
+
+      &:active {
+        background-color: @main-color-darkest;
+        color: #fff;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  border-top: 3px dotted #666;
+  margin: 1rem 0.5rem 1rem;
+  padding-top: 1.5rem;
+
+  a {
+    padding: 0.5rem;
+    color: #333;
+  }
+}
+
+.pocket {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #cdd7ec;
+
+  .fav {
+    display: flex;
+    flex-flow: row wrap;
+    max-height: 0;
+    transition: all 0.3s ease-in;
+    overflow: auto;
+
+    a {
+      padding: 0.5rem;
+      color: #cdd7ec;
+      transition: color 1s ease-in;
+    }
+  }
+
+  &.active {
+    .fav {
+      max-height: 70vh;
+
+      a {
+        color: #333;
+      }
+    }
+  }
+
+  .toggle-pocket {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: #fff;
+    border: 2px solid @main-color-darkest;
+    outline: none;
+  }
+
+  i {
+    display: block;
+    margin: 0 auto;
+    height: 2rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUxLjg1IiBoZWlnaHQ9IjQ1MS44NSIgdmlld0JveD0iMCAwIDQ1MS44NSA0NTEuODUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIyNS45MiA5Ny4xNGMtOC4wOTggMC0xNi4xOTUgMy4wOTItMjIuMzY5IDkuMjYzTDkuMjcxIDMwMC42OTNjLTEyLjM1OSAxMi4zNTktMTIuMzU5IDMyLjM5NyAwIDQ0Ljc1MSAxMi4zNTQgMTIuMzU0IDMyLjM4OCAxMi4zNTQgNDQuNzQ4IDBsMTcxLjktMTcxLjkyIDE3MS45MSAxNzEuOTFjMTIuMzU5IDEyLjM1NCAzMi4zOTEgMTIuMzU0IDQ0Ljc0NCAwIDEyLjM2NS0xMi4zNTQgMTIuMzY1LTMyLjM5MiAwLTQ0Ljc1MWwtMTk0LjI4LTE5NC4yOWMtNi4xNzctNi4xNzItMTQuMjc0LTkuMjU3LTIyLjM2OS05LjI1N3oiIGZpbGw9IiNlY2QzMjMiLz48L3N2Zz4=);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.active i {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUxLjg1IiBoZWlnaHQ9IjQ1MS44NSIgdmlld0JveD0iMCAwIDQ1MS44NSA0NTEuODUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIyNS45MiAzNTQuNzFjLTguMDk4IDAtMTYuMTk1LTMuMDkyLTIyLjM2OS05LjI2M0w5LjI3MSAxNTEuMTU3Yy0xMi4zNTktMTIuMzU5LTEyLjM1OS0zMi4zOTcgMC00NC43NTEgMTIuMzU0LTEyLjM1NCAzMi4zODgtMTIuMzU0IDQ0Ljc0OCAwbDE3MS45IDE3MS45MiAxNzEuOTEtMTcxLjkxYzEyLjM1OS0xMi4zNTQgMzIuMzkxLTEyLjM1NCA0NC43NDQgMCAxMi4zNjUgMTIuMzU0IDEyLjM2NSAzMi4zOTIgMCA0NC43NTFsLTE5NC4yOCAxOTQuMjljLTYuMTc3IDYuMTcyLTE0LjI3NCA5LjI1Ny0yMi4zNjkgOS4yNTd6IiBmaWxsPSIjZWNkMzIzIi8+PC9zdmc+);
+  }
+}
+
+// @keyframes wave {
+//   from { top: -3rem; }
+//   to   { top: -2rem;}
+// }
