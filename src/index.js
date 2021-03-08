@@ -100,23 +100,7 @@ window.addEventListener('DOMContentLoaded', e => {
   document.getElementById('surname').value = surname
   C.filters = filterStr
   const mainEl = document.querySelector('main')
-
-  document.querySelector('form').addEventListener('submit', e => {
-    e.preventDefault()
-
-    const surname = document.getElementById('surname').value.trim()
-    const filtersStr = document.getElementById('filters').value.trim()
-    window.localStorage.setItem(FILTERS_KEY, filtersStr)
-    window.localStorage.setItem(SURNAME_KEY, surname)
-    C.surname = surname
-    C.filters = filtersStr
-
-    const names = []
-    for (let i = 0; i < total; i++) {
-      names.push(C.gen(2))
-    }
-    mainEl.innerHTML = names.map(name => `<a class="name" href="#" data-name="${name}">${name}</a>`).join('')
-  })
+  document.querySelector('form').addEventListener('submit', generateNames)
 
   mainEl.addEventListener('click', ev => {
     if (ev.target.matches('a.name')) {
@@ -133,7 +117,27 @@ window.addEventListener('DOMContentLoaded', e => {
       F.remove(target.dataset.name)
     }
   })
+
+  generateNames()
+  document.querySelector('#cloak').style.display = 'none'
 }, false)
+
+function generateNames (e) {
+  if (e) e.preventDefault()
+
+  const surname = document.getElementById('surname').value.trim()
+  const filtersStr = document.getElementById('filters').value.trim()
+  window.localStorage.setItem(FILTERS_KEY, filtersStr)
+  window.localStorage.setItem(SURNAME_KEY, surname)
+  C.surname = surname
+  C.filters = filtersStr
+
+  const names = []
+  for (let i = 0; i < total; i++) {
+    names.push(C.gen(2))
+  }
+  document.querySelector('main').innerHTML = names.map(name => `<a class="name" href="#" data-name="${name}">${name}</a>`).join('')
+}
 
 function togglePocket (ev) {
   document.querySelector('.pocket').classList.toggle('active')

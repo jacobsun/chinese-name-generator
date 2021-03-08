@@ -125,14 +125,10 @@ address {
 }
 
 // end of css reset
-@main-color: #F2E268;
-@main-color-darker: #ECD323;
-@main-color-darkest: #EC7223;
+@main-color : #F2E268;
 
-.title {
-  font-size: 2rem;
-  padding-left: 0.5rem;
-}
+@main-color-darker : #ECD323;
+@main-color-darkest: #EC7223;
 
 .container {
   padding: 0.5rem;
@@ -152,7 +148,8 @@ header {
     }
 
     #filters-info {
-      flex: 0 10rem;
+      flex: 0 7rem;
+      font-size: 0.8rem;
       color: #666;
       padding: 0.5rem 0;
 
@@ -200,12 +197,22 @@ main {
   display: flex;
   flex-flow: row wrap;
   border-top: 3px dotted #666;
-  margin: 1rem 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 1rem;
   padding-top: 1.5rem;
 
   a {
     padding: 0.5rem;
     color: #333;
+  }
+}
+
+.title {
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+
+  a {
+    font-size: 0.8rem;
+    color: @main-color;
   }
 }
 
@@ -233,6 +240,7 @@ main {
   &.active {
     .fav {
       max-height: 70vh;
+      padding: 0.5rem;
 
       a {
         color: #333;
@@ -264,7 +272,33 @@ main {
   }
 }
 
-// @keyframes wave {
-//   from { top: -3rem; }
-//   to   { top: -2rem;}
+// #cloak {
+//   position  : fixed;
+//   z-index   : 99;
+//   top       : 0;
+//   left      : 0;
+//   right     : 0;
+//   bottom    : 0;
+//   background: #FFF;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   &.hide {
+//     display: none;
+//   }
+//   &::after {
+//     border-radius: 50%;
+//     box-shadow: inset -2px 0 0 2px @main-color;
+//     width              : 20vw;
+//     height             : 20vw;
+//     content            : "";
+//     display            : block;
+//     animation          : rotate 5s linear infinite;
+//   }
+// }
+
+// @keyframes rotate {
+//   to {
+//     transform: rotate(360deg);
+//   }
 // }

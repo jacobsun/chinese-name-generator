@@ -11,10 +11,38 @@
 
 </head>
 <body>
+<div id="cloak" style="
+position  : fixed;
+z-index   : 99;
+top       : 0;
+left      : 0;
+right     : 0;
+bottom    : 0;
+background: #FFF;
+display: flex;
+align-items: center;
+justify-content: center;
+">
+<style>
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+<div class="loader" style="
+border-radius: 50%;
+box-shadow: inset -2px 0 0 2px #F2E268;
+width              : 20vw;
+height             : 20vw;
+animation          : rotate 5s linear infinite;
+">
+</div>
+</div>
 
   <div class="container">
     <header>
-      <h1 class="title">姓名生成器</h1>
+      <h1 class="title">姓名生成器 <a href="https://github.com/jacobsun/chinese-name-generator">源代码</a></h1>
 
       <form>
         <div id="filters-info"></div>
