@@ -1,4 +1,4 @@
-name: publish to github pages
+name: deploy to github pages
 on: push
 
 jobs:
@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
-    - run: npm run publish
+    - run: npm run deploy
