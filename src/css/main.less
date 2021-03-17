@@ -199,7 +199,7 @@ main {
   border-top: 3px dotted #666;
   margin: 0.5rem 0.5rem 1rem;
   padding-top: 1.5rem;
-
+  justify-content: space-between;
   a {
     padding: 0.5rem;
     color: #333;
@@ -212,7 +212,7 @@ main {
 
   a {
     font-size: 0.8rem;
-    color: @main-color;
+    color: @main-color-darkest;
   }
 }
 
@@ -229,9 +229,8 @@ main {
     max-height: 0;
     transition: all 0.3s ease-in;
     overflow: auto;
-
+    justify-content: space-between;
     a {
-      padding: 0.5rem;
       color: #cdd7ec;
       transition: color 1s ease-in;
     }
@@ -272,33 +271,11 @@ main {
   }
 }
 
-// #cloak {
-//   position  : fixed;
-//   z-index   : 99;
-//   top       : 0;
-//   left      : 0;
-//   right     : 0;
-//   bottom    : 0;
-//   background: #FFF;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   &.hide {
-//     display: none;
-//   }
-//   &::after {
-//     border-radius: 50%;
-//     box-shadow: inset -2px 0 0 2px @main-color;
-//     width              : 20vw;
-//     height             : 20vw;
-//     content            : "";
-//     display            : block;
-//     animation          : rotate 5s linear infinite;
-//   }
-// }
-
-// @keyframes rotate {
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+footer {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  padding: 1rem;
+  a {
+    color: @main-color-darkest;
+  }
+}

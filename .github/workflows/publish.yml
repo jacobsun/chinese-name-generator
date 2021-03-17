@@ -1,0 +1,11 @@
+name: publish to github pages
+on: push
+
+jobs:
+  publish:
+    name: generate
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - run: npm publish
