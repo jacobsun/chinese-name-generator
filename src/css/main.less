@@ -200,6 +200,7 @@ main {
   margin: 0.5rem 0.5rem 1rem;
   padding-top: 1.5rem;
   justify-content: space-between;
+
   a {
     padding: 0.5rem;
     color: #333;
@@ -212,7 +213,6 @@ main {
 
   a {
     font-size: 0.8rem;
-    color: @main-color-darkest;
   }
 }
 
@@ -230,6 +230,7 @@ main {
     transition: all 0.3s ease-in;
     overflow: auto;
     justify-content: space-between;
+
     a {
       color: #cdd7ec;
       transition: color 1s ease-in;
@@ -275,7 +276,9 @@ footer {
   margin-bottom: 2rem;
   font-size: 0.8rem;
   padding: 1rem;
-  a {
-    color: @main-color-darkest;
-  }
+}
+
+.title a,
+footer a {
+  color: @main-color-darkest;
 }
