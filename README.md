@@ -1,3 +1,3 @@
 # 姓名生成器
 
-[https://sunfy.xyz/chinese-name-generator](https://sunfy.xyz/chinese-name-generator)
+[chinese-name-generator](https://sfengyuan.github.io/chinese-name-generator/)
