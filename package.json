@@ -10,7 +10,7 @@
     "lint:css": "npx stylelint ./src/**/*.less --fix",
     "lint": "npm run lint:js && npm run lint:css",
     "dev": "cross-env mode=development webpack serve --open",
-    "copy": "npx cpy '**/*.*' '../docs/' --cwd=dist --parents && npx cpy '**/*.*' '../../docs/' --cwd=src/assets --parents",
+    "copy": "npx cpy . ../docs --cwd=dist && npx cpy . ../../docs --cwd=src/assets",
     "deploy": "npm run lint  &&  npm run build:prod  &&  npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
