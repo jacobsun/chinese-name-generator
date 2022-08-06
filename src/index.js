@@ -92,12 +92,14 @@ const C = new Chinese()
 const total = 300
 const FILTERS_KEY = 'filters'
 const SURNAME_KEY = 'surname'
+const NAME_LENGTH = 'name_length'
 window.addEventListener('DOMContentLoaded', e => {
   const filterStr = window.localStorage.getItem(FILTERS_KEY) || ''
   const surname = window.localStorage.getItem(SURNAME_KEY) || ''
-
+  const nameLength = window.localStorage.getItem(NAME_LENGTH) || 2
   document.getElementById('filters').value = filterStr
   document.getElementById('surname').value = surname
+  document.getElementById('name-length').value = nameLength
   C.filters = filterStr
   const mainEl = document.querySelector('main')
   document.querySelector('form').addEventListener('submit', generateNames)
@@ -127,14 +129,16 @@ function generateNames (e) {
 
   const surname = document.getElementById('surname').value.trim()
   const filtersStr = document.getElementById('filters').value.trim()
+  const nameLength = parseInt(document.getElementById('name-length').value.trim()) || 2
   window.localStorage.setItem(FILTERS_KEY, filtersStr)
   window.localStorage.setItem(SURNAME_KEY, surname)
+  window.localStorage.setItem(NAME_LENGTH, nameLength)
   C.surname = surname
   C.filters = filtersStr
-
+  C.nameLength = nameLength
   const names = []
   for (let i = 0; i < total; i++) {
-    names.push(C.gen(2))
+    names.push(C.gen(nameLength))
   }
   document.querySelector('main').innerHTML = names.map(name => `<a class="name" href="#" data-name="${name}">${name}</a>`).join('')
 }

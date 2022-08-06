@@ -23,10 +23,9 @@ const config = {
 
   devtool: 'inline-source-map',
 
-  devServer: {
-    contentBase: './dist',
-    noInfo: true
-  },
+  // devServer: {
+  //   static: './dist'
+  // },
 
   plugins: [
     new CleanWebpackPlugin(),
